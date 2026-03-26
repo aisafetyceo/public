@@ -5238,7 +5238,6 @@ document.getElementById('domain').onkeypress = function (e) {
             if (!e) e = window.event;
             var keyCode = e.code || e.key;
             var input = "";
-document.getElementById("launch").innerHTML = a;    
 
         if (keyCode == 'Enter') {
                 publish();
@@ -5917,10 +5916,10 @@ document.getElementById("launch").innerHTML = a;
             }
         }
 
-var rv = 0;
         document.getElementById("domain").addEventListener("input", domain);
         function domain() {
             if (this.value) {
+               var rv = 0;
               var input = this.value;
                 input = input.toLowerCase()
                 var abc = "abcdefghijklmnopqrstuvwxyz ";
@@ -5928,7 +5927,7 @@ var rv = 0;
                  rv += abc.indexOf(input[i]) + 1; 
 
                     }
-            a = (parseInt((100 - rv).toString().split("").join("")))
+            a = (parseInt((100 - rv).toString().split("").reverse().join("")))
                 document.getElementById("cost").innerHTML = a;
 
                 fetch("https://josephmujuzi.com/?user=" + (document.getElementById("auth_email").value || getCookie("email")) + "&test=" + this.value, {
