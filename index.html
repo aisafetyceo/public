@@ -5858,7 +5858,7 @@ document.getElementById('domain').onkeypress = function (e) {
             this.value = null;
         }
         function download_site(event) {
-            var site = event.target.closest("[data-dl]").dataset.dl;
+           // var site = event.target.closest("[data-dl]").dataset.dl;
             function download(url) {
                 fetch(url)
                     .then(resp => resp.blob())
@@ -5875,10 +5875,10 @@ document.getElementById('domain').onkeypress = function (e) {
                     })
                     .catch(() => console.log('Failed to download!'));
             }
-            site = site.split("/")[1];
-            if (!site.includes(".")) {
+           // site = site.split("/")[1];
+          //  if (!site.includes(".")) {
                 site = "https://" + site + ".https://josephmujuzi.com//"
-            }
+           // }
             download(site);
         };
         function edit_site_public(event) {
@@ -5969,7 +5969,6 @@ document.getElementById('domain').onkeypress = function (e) {
             }
         };
         function publish() {
-           download_site()
             var should_publish = 1;
             var chars = document.getElementById("domain").value;
             var test = /^[0-9A-Za-z.\-]+$/.test(chars);
@@ -6055,6 +6054,32 @@ document.getElementById('domain').onkeypress = function (e) {
                        // document.getElementById('omg').innerHTML = document.getElementById('omg').innerHTML + css;
 
                         page = page.innerHTML;
+                       
+
+
+
+  const htmlContent = `
+    <!DOCTYPE html>
+    <html>
+    <head><title>My Page</title></head>
+    <body>
+      <h1>Hello World</h1>
+      <p>This was generated from a variable.</p>
+    </body>
+    </html>
+  `;
+
+  const blob = new Blob([htmlContent], { type: "text/html" });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "page.html";
+  a.click();
+
+  URL.revokeObjectURL(url);
+
+
                         setCookie('domain', userDomain, 1024);
                         setCookie('email', auth_email.value, 1024);
                         window.FTW = {
