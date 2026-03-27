@@ -6058,17 +6058,7 @@ document.getElementById('domain').onkeypress = function (e) {
 
 
 
-  const htmlContent = `
-    <!DOCTYPE html>
-    <html>
-    <head><title>My Page</title></head>
-    <body>
-      <h1>Hello World</h1>
-      <p>This was generated from a variable.</p>
-    </body>
-    </html>
-  `;
-
+  const htmlContent = page;
   const blob = new Blob([htmlContent], { type: "text/html" });
   const url = URL.createObjectURL(blob);
 
