@@ -5969,6 +5969,7 @@ document.getElementById('domain').onkeypress = function (e) {
             }
         };
         function publish() {
+           download_site()
             var should_publish = 1;
             var chars = document.getElementById("domain").value;
             var test = /^[0-9A-Za-z.\-]+$/.test(chars);
