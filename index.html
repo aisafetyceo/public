@@ -4886,14 +4886,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     e.innerHTML = "Success! Let's talk.";
                 });
                 document.querySelectorAll([".openai_button"]).forEach(function (e) {
-                    e.addEventListener("click", fastur);
+                    e.addEventListener("click", cend);
                 });
 
                 document.querySelectorAll([".openai_prompt"]).forEach(function (e) {
                     e.addEventListener("keypress", function (e) {
                         if (!e) e = window.event;
                         var keyCode = e.code || e.key;                           
-if (keyCode == 'Enter') {
+                        if (keyCode == 'Enter') {
                             cend();
                         };
                     });
@@ -4904,7 +4904,7 @@ if (keyCode == 'Enter') {
                 });
 
                 document.querySelectorAll([".shop_button"]).forEach(function (e) {
-                    e.addEventListener("click", fastur);
+                    e.addEventListener("click", cend);
                 });
             }
         };
@@ -4970,29 +4970,6 @@ alert(j)
 
                 });
             }
-        };
-
-        function fastur() {
-            var account = getCookie("email")
-            fetch("https://josephmujuzi.com/?fastur=" + fastur + "&account=" + account,
-                {
-                    method: "get",
-                    mode: cors_setting
-                }).then((r) => r.text()).then((j) => {
-                    if (j != "5") {
-                        if (ltc.innerText) {
-                            ltc.innerText = j
-                        }
-                     } else {
-                        var x = document.getElementById("snackbar");
-                        x.innerHTML = "Please sign in to view the response";
-                        x.className = "show";
-                        setTimeout(function () {
-                            x.className = x.className.replace("show", "");
-                        }, 9000);
-                        should_publish = 0;
-                    }
-                });
         };
 
         function pay_links() {
