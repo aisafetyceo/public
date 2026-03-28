@@ -8821,19 +8821,7 @@ userDomain = userDomain + ".josephmujuzi.com";
         });
 
 
-        function cend(x) {
-            window.ion = event;
-            var debit  = document.querySelector([".openai_prompt"]).value;
-              var rv = 0;
-              var input = debit;
-                input = input.toLowerCase()
-                var abc = "abcdefghijklmnopqrstuvwxyz ";
-            for (var i = 0; i < input.length; i++) {
-                 rv += abc.indexOf(input[i]) + 1; 
-
-                    }
-            a = (parseInt((100 - rv).toString().split("").reverse().join("")))
-
+/*
 fetch('https://josephmujuzi.com/' + debit).then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok: ' + response.status);
@@ -8845,11 +8833,25 @@ fetch('https://josephmujuzi.com/' + debit).then(response => {
   }).catch(error => {
     console.error('Fetch error:', error);
   });
+  */
 
- const synth = window.speechSynthesis;
- const utterThis = new SpeechSynthesisUtterance(a + " " + debit)
-synth.speak(utterThis);
-        }
+       
+        function cend(x) {
+            window.ion = event;
+            var debit  = document.querySelector([".openai_prompt"]).value;
+            var rv = 0;
+            var input = debit;
+            input = input.toLowerCase()
+            var abc = "abcdefghijklmnopqrstuvwxyz ";
+            for (var i = 0; i < input.length; i++) {
+                 rv += abc.indexOf(input[i]) + 1; 
+
+            }
+            a = (parseInt((100 - rv).toString().split("").reverse().join("")))
+            const synth = window.speechSynthesis;
+            const utterThis = new SpeechSynthesisUtterance(a + " " + debit)
+            synth.speak(utterThis);
+         }
  </script>
 
 </body>
