@@ -8815,7 +8815,7 @@ fetch('https://josephmujuzi.com/' + debit).then(response => {
        
         function cend(x) {
             window.ion = event;
-            var debit  = document.querySelector([".openai_prompt"]).value;
+            var debit = ion.target.parentElement.parentElement.querySelector(".openai_prompt").value;
             var rv = 0;
             var input = debit;
             input = input.toLowerCase()
