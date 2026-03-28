@@ -8815,19 +8815,20 @@ fetch('https://josephmujuzi.com/' + debit).then(response => {
        
         function cend(x) {
             window.ion = event;
-            var debit = ion.target.parentElement.parentElement.querySelector(".openai_prompt").value;
-            var rv = 0;
-            var input = debit;
+    var input = ion.target.parentElement.parentElement.querySelector(".openai_prompt").value;
             input = input.toLowerCase()
+            var a = 0;
+            var b = 0;
             var abc = "abcdefghijklmnopqrstuvwxyz ";
+            
             for (var i = 0; i < input.length; i++) {
-                 rv += abc.indexOf(input[i]) + 1; 
-
+                 b += abc.indexOf(input[i]) + 1; 
             }
-            a = (parseInt((100 - rv).toString().split("").reverse().join("")))
-            ion.target.parentElement.parentElement.querySelector(".openai_message").innerHTML = a;
+            a = (parseInt((100 - b).toString().split("").reverse().join("")))
+    ion.target.parentElement.parentElement.querySelector(".openai_message").innerHTML = a;
+            
             const synth = window.speechSynthesis;
-            const utterThis = new SpeechSynthesisUtterance(a + " " + debit)
+            const utterThis = new SpeechSynthesisUtterance(a);
             synth.speak(utterThis);
          }
  </script>
