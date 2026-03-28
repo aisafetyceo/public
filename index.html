@@ -4892,8 +4892,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.querySelectorAll([".openai_prompt"]).forEach(function (e) {
                     e.addEventListener("keypress", function (e) {
                         if (!e) e = window.event;
-                        var keyCode = e.code || e.key;    
-alert(3);                        
+                        var keyCode = e.code || e.key;                           
 if (keyCode == 'Enter') {
                             cend();
                         };
@@ -4974,8 +4973,6 @@ alert(j)
         };
 
         function fastur() {
-
-            window.fastur = document.getElementById("fastur-x").value;
             var account = getCookie("email")
             fetch("https://josephmujuzi.com/?fastur=" + fastur + "&account=" + account,
                 {
