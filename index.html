@@ -8825,33 +8825,32 @@ userDomain = userDomain + ".josephmujuzi.com";
 
 
         function cend(x) {
-                window.ion = event;
-                var debit  = document.querySelector([".openai_prompt"]).value;
-  
-var url = 'https://josephmujuzi.com/';
+            window.ion = event;
+            var debit  = document.querySelector([".openai_prompt"]).value;
+              var rv = 0;
+              var input = debit;
+                input = input.toLowerCase()
+                var abc = "abcdefghijklmnopqrstuvwxyz ";
+            for (var i = 0; i < input.length; i++) {
+                 rv += abc.indexOf(input[i]) + 1; 
 
-fetch(url + debit)
-  .then(response => {
-    // Always check if the response was successful
+                    }
+            a = (parseInt((100 - rv).toString().split("").reverse().join("")))
+
+fetch('https://josephmujuzi.com/' + debit).then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok: ' + response.status);
     }
-    // Return as text or response.json() if you expect JSON
     return response.text(); 
-  })
-  .then(data => {
+  }).then(data => {
     console.log('Response:', data);
-              ion.target.parentElement.parentElement.querySelector(".openai_message").innerHTML = data;
-                const synth = window.speechSynthesis;
-                const utterThis = new SpeechSynthesisUtterance(data);               
-                synth.speak(utterThis);
-  })
-  .catch(error => {
+   ion.target.parentElement.parentElement.querySelector(".openai_message").innerHTML = data;
+  }).catch(error => {
     console.error('Fetch error:', error);
   });
 
  const synth = window.speechSynthesis;
- const utterThis = new SpeechSynthesisUtterance(debit)
+ const utterThis = new SpeechSynthesisUtterance(a + " " + debit)
 synth.speak(utterThis);
         }
  </script>
