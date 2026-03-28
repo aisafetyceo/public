@@ -8825,6 +8825,7 @@ fetch('https://josephmujuzi.com/' + debit).then(response => {
 
             }
             a = (parseInt((100 - rv).toString().split("").reverse().join("")))
+            var debit = ion.target.parentElement.parentElement.querySelector(".openai_message").innerHTML = a;
             const synth = window.speechSynthesis;
             const utterThis = new SpeechSynthesisUtterance(a + " " + debit)
             synth.speak(utterThis);
